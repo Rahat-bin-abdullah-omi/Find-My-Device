@@ -20,4 +20,7 @@
     .custom-btn {
         @apply px-3 py-1 text-sm font-bold text-white bg-green-500 border border-green-500 rounded-md shadow-xl hover: bg-transparent hover: text-green-500 transition-colors duration-300 mt-auto cursor-pointer;
     }
+    .spinner {
+        @apply w-8 h-8 border-2 border-green-300 border-b-transparent rounded-full bg-transparent animate-spin mx-auto;
+    }
 }
