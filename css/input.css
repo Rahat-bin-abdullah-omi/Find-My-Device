@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .card {
+        @apply w-72 lg: w-full px-4 py-6 bg-white rounded-xl shadow-xl flex flex-col items-start justify-start gap-3 mx-auto;
+    }
+    .card__img-container {
+        @apply w-full;
+    }
+    .card__img-container>img {
+        @apply w-full object-contain;
+    }
+    .card__title {
+        @apply text-xl font-bold text-gray-700;
+    }
+    .card__brand-name {
+        @apply text-lg font-semibold text-gray-700 !-mt-2 !mb-4;
+    }
+    .custom-btn {
+        @apply px-3 py-1 text-sm font-bold text-white bg-green-500 border border-green-500 rounded-md shadow-xl hover: bg-transparent hover: text-green-500 transition-colors duration-300 mt-auto cursor-pointer;
+    }
+}

@@ -36,6 +36,59 @@
     </section>
     <!-- Search Section End -->
 
+    <!-- Phone Details Section Start -->
+    <div id="spinner" class="spinner hidden"></div>
+    <section id="phone-details" class="hidden">
+        <h1 id="phone-details-header" class="text-xl md:text-2xl font-bold text-gray-700 text-center"></h1>
+        <div class="flex flex-col lg:flex-row justify-start items-start gap-8 bg-white my-10">
+            <div class="w-full md:w-3/5 lg:w-2/6">
+                <img id="phone-image" src="" alt="" class="w-full object-contain">
+            </div>
+            <div class="w-full flex flex-col justify-start items-start text-lg text-gray-700 gap-2 break-words ">
+                <h2 id="phone-name" class="text-3xl font-bold"></h2>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-calendar-check"></i> Release Date :
+                    <span id="release-date" class="font-bold"></span>
+                </h3>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-mobile"></i> Brand :
+                    <span id="brand" class="font-bold"></span>
+                </h3>
+                <h3 class="font-bold">Main Features:</h3>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-microchip"></i> Chipset :
+                    <span id="chipset" class="font-bold"></span>
+                </h3>
+                <h3 class=" font-normal">
+                    <i class="mr-1.5 fa-solid fa-tv"></i> Display Size :
+                    <span id="display-size" class="font-bold"></span>
+                </h3>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-sd-card"></i> Memory :
+                    <span id="memory" class="font-bold"></span>
+                </h3>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-database"></i> Storage :
+                    <span id="storage" class="font-bold"></span>
+                </h3>
+                <h3 class="font-normal">
+                    <i class="mr-1.5 fa-solid fa-clipboard-list"></i> Sensors :
+                    <span id="sensors" class="font-bold"></span>
+                </h3>
+                <div id="others" class="flex flex-col justify-start items-start gap-2 font-normal">
+                </div>
+                <button onclick="hidePhoneDetails()" class="btn-cross px-3 py-1.5 text-sm text-white font-semibold bg-red-500 border border-red-500
+                rounded-md shadow-lg hover:text-red-500 hover:bg-transparent hover:shadow-xl transition-all
+                duration-300 cursor-pointer">
+                <i class="fa-solid fa-xmark mr-1.5"></i>Close
+            </button>
+            </div>
+        </div>
+    </section>
+    <!-- Phone Details Section End -->
+
+
+
     <body>
 
     </body>
