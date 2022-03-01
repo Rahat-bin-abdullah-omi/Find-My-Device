@@ -1,110 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Info Finder</title>
+    <title>Phone Information Finder</title>
+
     <!-- Custom CSS Added -->
     <link rel="stylesheet" href="./css/output.css">
+
     <!-- Custom Js File Added -->
     <script src="./js/index.js" defer></script>
+
     <!-- fontawesome kit link -->
     <script src="https://kit.fontawesome.com/3fcf4eaa14.js" crossorigin="anonymous" defer></script>
 </head>
-<!-- Header Section Start -->
-<header class="container px-6 md:px-10 lg:px-16 xl:px-20">
-    <nav class="flex justify-between items-center py-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-700">Phone Finder</h1>
-    </nav>
-</header>
-<!-- Header Section End -->
-<!-- Main Section Start -->
-<main class="container px-6 md:px-10 lg:px-16 xl:px-20">
-    <!-- Search Section Start -->
-    <section class=" mb-16">
-        <div class="w-full md:w-3/5 lg:w-1/2 flex justify-start items-center mx-auto rounded-md shadow-md text-lg">
-            <input id="search-field" type="text" placeholder="Enter a Phone Name" class="px-3 py-2 text-gray-700 bg-green-50 shadow-xl rounded-md focus:outline-none flex-grow">
-            <button onclick="searchPhone()" class="custom-btn !rounded-l-none !py-2 !mt-0 !text-lg">
-                <!-- Search icon for Mobile devices -->
-                <i class="mr-1.5 fa-solid fa-magnifying-glass"></i>
-                <span class="hidden md:inline-block">Search</span>
-            </button>
-        </div>
-        <h1 id="error-message" class="text-sm font-medium text-red-400 text-center mt-2"></h1>
-    </section>
-    <!-- Search Section End -->
-
-    <!-- Phone Details Section Start -->
-    <div id="spinner" class="spinner hidden"></div>
-    <section id="phone-details" class="hidden">
-        <h1 id="phone-details-header" class="text-xl md:text-2xl font-bold text-gray-700 text-center"></h1>
-        <div class="flex flex-col lg:flex-row justify-start items-start gap-8 bg-white my-10">
-            <div class="w-full md:w-3/5 lg:w-2/6">
-                <img id="phone-image" src="" alt="" class="w-full object-contain">
-            </div>
-            <div class="w-full flex flex-col justify-start items-start text-lg text-gray-700 gap-2 break-words ">
-                <h2 id="phone-name" class="text-3xl font-bold"></h2>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-calendar-check"></i> Release Date :
-                    <span id="release-date" class="font-bold"></span>
-                </h3>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-mobile"></i> Brand :
-                    <span id="brand" class="font-bold"></span>
-                </h3>
-                <h3 class="font-bold">Main Features:</h3>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-microchip"></i> Chipset :
-                    <span id="chipset" class="font-bold"></span>
-                </h3>
-                <h3 class=" font-normal">
-                    <i class="mr-1.5 fa-solid fa-tv"></i> Display Size :
-                    <span id="display-size" class="font-bold"></span>
-                </h3>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-sd-card"></i> Memory :
-                    <span id="memory" class="font-bold"></span>
-                </h3>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-database"></i> Storage :
-                    <span id="storage" class="font-bold"></span>
-                </h3>
-                <h3 class="font-normal">
-                    <i class="mr-1.5 fa-solid fa-clipboard-list"></i> Sensors :
-                    <span id="sensors" class="font-bold"></span>
-                </h3>
-                <div id="others" class="flex flex-col justify-start items-start gap-2 font-normal">
-                </div>
-                <button onclick="hidePhoneDetails()" class="btn-cross px-3 py-1.5 text-sm text-white font-semibold bg-red-500 border border-red-500
-                rounded-md shadow-lg hover:text-red-500 hover:bg-transparent hover:shadow-xl transition-all
-                duration-300 cursor-pointer">
-                <i class="fa-solid fa-xmark mr-1.5"></i>Close
-            </button>
-            </div>
-        </div>
-    </section>
-    <!-- Phone Details Section End -->
-
-    <!-- Phone Search results Section Start -->
-    <div id="spinner-result" class="spinner hidden"></div>
-    <section id="search-result-container" class="hidden my-12 relative pb-16">
-        <div class="">
-
-            <h1 id="search-result-header" class="text-xl md:text-2xl font-bold text-gray-700 text-center"></h1>
-            <div id="card-container" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
-            </div>
-
-            <button id="show-all-btn" onclick="showAllSearchResults()" class="btn custom-btn ml-auto hidden absolute bottom-0 right-0">Show
-                        All <i class="ml-1.5 fa-solid fa-angles-right"></i></button>
-        </div>
-    </section>
-    <!-- Phone Search results Section End -->
-</main>
 
 <body>
+    <!-- Header Section Start -->
+    <header class="container px-6 md:px-10 lg:px-16 xl:px-20">
+        <nav class="flex justify-between items-center py-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-700">Phone Finder</h1>
+        </nav>
+    </header>
+    <!-- Header Section End -->
+    <!-- Main Section Start -->
+    <main class="container px-6 md:px-10 lg:px-16 xl:px-20">
+        <!-- Search Section Start -->
+        <section class=" mb-16">
+            <div class="w-full md:w-3/5 lg:w-1/2 flex justify-start items-center mx-auto rounded-md shadow-md text-lg">
+                <input id="search-field" type="text" placeholder="Enter a Phone Name" class="px-3 py-2 text-gray-700 bg-green-50 shadow-xl rounded-md focus:outline-none flex-grow">
+                <button onclick="searchPhone()" class="custom-btn !rounded-l-none !py-2 !mt-0 !text-lg">
+                        <!-- Search icon for Mobile devices -->
+                        <i class="mr-1.5 fa-solid fa-magnifying-glass"></i>
+                        <span class="hidden md:inline-block">Search</span>
+                    </button>
+            </div>
+            <h1 id="error-message" class="text-sm font-medium text-red-400 text-center mt-2"></h1>
+        </section>
+        <!-- Search Section End -->
 
+        <!-- Phone Details Section Start -->
+        <div id="spinner" class="spinner hidden"></div>
+        <section id="phone-details" class="hidden">
+            <h1 id="phone-details-header" class="text-xl md:text-2xl font-bold text-gray-700 text-center"></h1>
+            <div class="flex flex-col lg:flex-row justify-start items-start gap-8 bg-white my-10">
+                <div class="w-full md:w-3/5 lg:w-2/6">
+                    <img id="phone-image" src="" alt="" class="w-full object-contain">
+                </div>
+                <div class="w-full flex flex-col justify-start items-start text-lg text-gray-700 gap-2 break-words ">
+                    <h2 id="phone-name" class="text-3xl font-bold"></h2>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-calendar-check"></i> Release Date :
+                        <span id="release-date" class="font-bold"></span>
+                    </h3>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-mobile"></i> Brand :
+                        <span id="brand" class="font-bold"></span>
+                    </h3>
+                    <h3 class="font-bold">Main Features:</h3>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-microchip"></i> Chipset :
+                        <span id="chipset" class="font-bold"></span>
+                    </h3>
+                    <h3 class=" font-normal">
+                        <i class="mr-1.5 fa-solid fa-tv"></i> Display Size :
+                        <span id="display-size" class="font-bold"></span>
+                    </h3>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-sd-card"></i> Memory :
+                        <span id="memory" class="font-bold"></span>
+                    </h3>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-database"></i> Storage :
+                        <span id="storage" class="font-bold"></span>
+                    </h3>
+                    <h3 class="font-normal">
+                        <i class="mr-1.5 fa-solid fa-clipboard-list"></i> Sensors :
+                        <span id="sensors" class="font-bold"></span>
+                    </h3>
+                    <div id="others" class="flex flex-col justify-start items-start gap-2 font-normal">
+                    </div>
+                    <button onclick="hidePhoneDetails()" class="btn-cross px-3 py-1.5 text-sm text-white font-semibold bg-red-500 border border-red-500
+                            rounded-md shadow-lg hover:text-red-500 hover:bg-transparent hover:shadow-xl transition-all
+                            duration-300 cursor-pointer">
+                            <i class="fa-solid fa-xmark mr-1.5"></i>Close
+                        </button>
+                </div>
+            </div>
+        </section>
+        <!-- Phone Details Section End -->
+
+        <!-- Phone Search results Section Start -->
+        <div id="spinner-result" class="spinner hidden"></div>
+        <section id="search-result-container" class="hidden my-12 relative pb-16">
+            <div class="">
+
+                <h1 id="search-result-header" class="text-xl md:text-2xl font-bold text-gray-700 text-center"></h1>
+                <div id="card-container" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+
+                </div>
+
+                <button id="show-all-btn" onclick="showAllSearchResults()" class="btn custom-btn ml-auto hidden absolute bottom-0 right-0">Show
+                        All <i class="ml-1.5 fa-solid fa-angles-right"></i></button>
+            </div>
+        </section>
+        <!-- Phone Search results Section End -->
+    </main>
 </body>
 
 </html>
